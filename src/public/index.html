@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>KBCS Web Player</title>
+        <script type="text/javascript" src="getCurrentShow.js"></script>
+        <link rel="stylesheet" href="player.css" />
+    </head>
+    <body>
+        <div class="player-container">
+            <!-- Background image -->
+            <div class="image-container">
+                <img id="sh_photo" src="default.jpg" alt="Show Image" />
+            </div>
+
+            <!-- Overlay for better text readability -->
+            <div class="overlay"></div>
+
+            <!-- Content layered on top -->
+            <div class="content">
+                <h1 id="sh_name">
+                    <a id="sh_url" href="#">Show Name</a>
+                </h1>
+
+                <ul>
+                    <ol id="sh_djname">
+                        Program Host
+                    </ol>
+                    <ol id="sh_cat">
+                        Show Category
+                    </ol>
+                    <ol id="sh_stime">
+                        Start Time
+                    </ol>
+                    <ol id="sh_ends">
+                        Stop Time
+                    </ol>
+                    <ol id="sh_desc">
+                        Show Description
+                    </ol>
+                </ul>
+
+                <!-- Spacer to push content up and player down -->
+                <div class="spacer"></div>
+            </div>
+
+            <!-- Audio player at the bottom -->
+            <div class="audio-container">
+                <div class="player-info">
+                    <span class="now-playing">Now streaming KBCS</span>
+                </div>
+                <audio
+                    src="http://stream.pacificaservice.org:8000/kbcs"
+                    controls
+                    autoplay
+                ></audio>
+            </div>
+        </div>
+    </body>
+</html>

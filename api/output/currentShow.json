@@ -1,0 +1,52 @@
+{
+  "current": {
+    "sh_id": 9,
+    "sh_name": "Roots Rock + Soul",
+    "sh_altid": "rootrocksoul",
+    "sh_memsysid": "",
+    "sh_photo": "",
+    "sh_med_photo": "",
+    "sh_djname": "Iaan Hughes",
+    "sh_info": 132,
+    "sh_shour": 13,
+    "sh_stime": "1:00 PM",
+    "sh_ampm": "12:00 Midnight",
+    "sh_days": "Mon,Tue,Wed,Thu,Fri",
+    "sh_big_days": "Monday,Tuesday,Wednesday,Thursday,Friday,",
+    "sh_ends": "5:00 PM",
+    "sh_ampm_ends": "1:00 AM",
+    "sh_len": 3600,
+    "sh_url": "https://www.kbcs.fm/programs/iaan-hughes/",
+    "sh_facebook": "",
+    "sh_twitter": "",
+    "sh_tumblr": "",
+    "sh_cat": {
+      "ca_name": "Music Mix",
+      "ca_color": "FFFFFF",
+      "ca_bgcolor": "BF866D",
+      "ca_lcolor": "CCFFDB"
+    },
+    "type": "Music"
+  },
+  "next": {
+    "sh_altid": "rootrocksouleven",
+    "sh_memsysid": "",
+    "sh_name": "Roots Rock + Soul - Evenings",
+    "sh_desc": "",
+    "sh_url": "https://www.kbcs.fm/programs/rootsrocksoul/",
+    "sh_facebook": "",
+    "sh_twitter": "",
+    "sh_tumblr": "",
+    "sh_photo": "",
+    "sh_it_photo": "",
+    "sh_med_photo": "",
+    "sh_djname": "Greg DElia",
+    "sh_email": "",
+    "hour": "12:00 AM",
+    "sh_shour": 0,
+    "day": "Tuesday",
+    "days": "Tue ",
+    "sh_info": 132,
+    "type": "Music"
+  }
+}
