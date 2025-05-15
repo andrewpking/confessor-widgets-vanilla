@@ -23,13 +23,19 @@ Once you have your workspace setup, the following changes need to be made to fil
 1. Edit getCurrentShow.js so that the variable confessor is set to the URL for your confessor instance.
 1. Edit getCurrentShow.js so that the variable timeZone is set to the [IANA timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for your radio station.
 
-Once you have prepared your player, you can test it by opening `index.html` in your browser. If you are happy with the results:
+Once you have prepared your player, you can test it by opening `index.html` in your browser. Now you will need to host this player.
 
-- Save your changes and push them to your fork, this will automatically generate a site on github pages with your player at `your-github-username.github.io/confessor-widgets-vanilla`, you can use this page for your player.
+### Hosting
+
+You can use the deployment pipeline built into this repo to host the player on your github pages website or self-host by uploading the code to your own server.
+
+#### GitHub Pages (Recommended)
+
+Save your changes and push them to your fork, this will automatically generate a site on github pages with your player at `your-github-username.github.io/confessor-widgets-vanilla`, you can use this page for your player.
 
 **Note**: This page will not load the audio unless you contact Otis to setup SSL on your IceCast server (see "Current Limitations" section)
 
-### Self hosting
+#### Self hosting
 
 If you prefer to self host, you will simply copy the files to your webpage.
 
@@ -37,6 +43,8 @@ If you prefer to self host, you will simply copy the files to your webpage.
 - Upload the contents of src/public folder to your webpage into a subfolder for your pop-out player.
 
 ### Add player to your homepage
+
+You now have a web player for your radio station that includes metadata from Confessor. This is great, however your listeners will need to be able to find it.
 
 Add a link to the pop-out player to your homescreen by using the following code on your homepage, using either the path to your player or link to github sites deployment of your player:
 
