@@ -67,23 +67,36 @@ setInterval(async function () {
 }, 60000); // Check every minute
 
 /**
- * Function that accepts a string time formatted as '5:00 PM'
+ * Function that accepts a string time formatted as '5:00 PM' or special keywords
  * Returns the time as a JavaScript Date object.
  * This time will be the nearest time in the future for the user.
- * @param {string} time - Time string in format '5:00 PM' or '05:00 PM'
+ * @param {string} time - Time string in format '5:00 PM', '05:00 PM', 'Noon', or 'Midnight' (case insensitive)
  * @param {string} timezone - IANA timezone string (e.g. 'America/New_York')
  * @returns {Date} JavaScript Date object representing the next occurrence of this time
  */
 function parseDate(time, timezone) {
-  // Parse the time components
-  const [timePart, meridiem] = time.split(" ");
-  let [hours, minutes] = timePart.split(":").map((num) => parseInt(num, 10));
+  let hours = 0;
+  let minutes = 0;
 
-  // Convert to 24-hour format
-  if (meridiem === "PM" && hours !== 12) {
-    hours += 12;
-  } else if (meridiem === "AM" && hours === 12) {
+  // Handle special keywords
+  const normalizedTime = time.toLowerCase();
+  if (normalizedTime === 'noon') {
+    hours = 12;
+    minutes = 0;
+  } else if (normalizedTime === 'midnight') {
     hours = 0;
+    minutes = 0;
+  } else {
+    // Parse the time components
+    const [timePart, meridiem] = time.split(" ");
+    [hours, minutes] = timePart.split(":").map((num) => parseInt(num, 10));
+
+    // Convert to 24-hour format
+    if (meridiem === "PM" && hours !== 12) {
+      hours += 12;
+    } else if (meridiem === "AM" && hours === 12) {
+      hours = 0;
+    }
   }
 
   // Create a date object for current time in the specified timezone
