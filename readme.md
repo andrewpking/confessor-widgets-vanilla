@@ -2,30 +2,43 @@
 
 This web-player is designed to work with Pacifica Streaming Services Confessor API written by Otis. All code in src/public is written by [Drew King](https://www.github.com/andrewpking)
 
-You can try an [example web-player widget](https://andrewpking.github.io/confessor-widgets-vanilla/) made for the KBCS website. Please note that GitHub Pages requires SSL for all resources to run in its domain, meaning your IceCast URL should start with `https://`.
+You can try an [example web-player widget](https://andrewpking.github.io/confessor-widgets-vanilla/) made for the KBCS website. Please note that GitHub Pages requires SSL for all resources to run in its domain, meaning your IceCast stream URL should start with `https://`.
 
 **Note**: If you do not have an IceCast stream URL with `https://`, you will need to contact Otis for one.
 
 ## How to add player widget
 
-This player can be embedded into an existing webpage or linked to as a pop-out player (recommended). Since most radio websites are not built as Single Page Apps (SPA's), I recommend using this as a pop-out player.
+This tutorial assumes you know the following:
 
-Alternatively, you can use github pages to host this player from a fork.
+- The call sign of your radio station.
+- The URL of your confessor instance from pacifica.
+- The URL of your web stream from pacifica.
+- The timezone of your radio station.
+
+This tutorial requires that you:
+
+- Have a GitHub account
+- Know how to [fork a repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
+- Are able to locate a config file and edit several variables.
+
+The player can be embedded into an existing webpage or linked to as a pop-out player (recommended). Since most radio websites are not built as Single Page Apps (SPA's), I recommend using this as a pop-out player.
+
+The steps described are for using github pages to host this player from a fork or self host a popout for advanced users.
 
 ### Pop-Out player for your confessor
 
-1. Fork this repository to your github
-1. Clone your forked repository to your computer for editing.
+1. Fork this repository to your github using the fork button.
 
 #### Change variables for your radio station
 
-Once you have your workspace setup, the following changes need to be made to files in `src/public` directory:
+Once you have your workspace setup, the following changes need to be made to the config file in `src/public/config.js`. You can do this directly on github in your fork.
 
-1. Edit index.html so that the \<audio\> tag points to the URL of your IceCast stream this demo uses an [IceCast stream for KBCS](http://stream.pacificaservice.org:8000/kbcs).
-1. Edit getCurrentShow.js so that the variable confessor is set to the URL for your confessor instance.
-1. Edit getCurrentShow.js so that the variable timeZone is set to the [IANA timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for your radio station.
+1. Put your stations call sign in quotes for the `station` variable, the default is KBCS.
+1. Put your stations confessor instance link in quotes for the `confessor`, we are using KBCS's confessor as a default.
+1. Put your stations's IceCast Stream with https in the `stream` variable in quotes. This demo uses an [IceCast stream for KBCS](https://kbcsconf.pacificaservice.org).
+1. Edit the variable for `timeZone` to match your radio station's timezone, formatted as an [IANA timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
-Once you have prepared your player, you can test it by opening `index.html` in your browser. Now you will need to host this player.
+**Note**: Don't forget to save the file when you are finished editing.
 
 ### Hosting
 
@@ -33,20 +46,26 @@ You can use the deployment pipeline built into this repo to host the player on y
 
 #### GitHub Pages (Recommended)
 
-Save your changes and push them to your fork, this will automatically generate a site on github pages with your player at `your-github-username.github.io/confessor-widgets-vanilla`, you can use this page for your player.
+Save your changes to your fork using the following commands:
+
+`git commit -m "Updated my config variables"`
+`git push`
+
+This will automatically generate a site on github pages with your player at `your-github-username.github.io/confessor-widgets-vanilla`, you can use this page for your player.
 
 #### Self hosting
 
 If you prefer to self host, you will simply copy the files to your webpage.
 
-- Edit the name of `src/public/index.html` to reflect the name of the page you desire.
-- Upload the contents of src/public folder to your webpage into a subfolder for your pop-out player.
+1. Download the code as a zip from your GitHub fork.
+1. Edit the name of `src/public/index.html` to reflect the name of the page you desire.
+1. Upload the contents of `src/public` folder to your webpage into a subfolder for your pop-out player.
 
 ### Add player to your homepage
 
 You now have a web player for your radio station that includes metadata from Confessor. This is great, however your listeners will need to be able to find it.
 
-Add a link to the pop-out player to your homescreen by using the following code on your homepage, using either the path to your player or link to github sites deployment of your player:
+Add a link to the pop-out player to your homescreen by using the following code on your homepage, using either the _path to your player_ or _link to github sites_ deployment of your player:
 
 `<a href="/path/to/your/player.html"
 target="popup"

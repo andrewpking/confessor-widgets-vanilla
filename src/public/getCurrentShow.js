@@ -10,14 +10,19 @@
  * @note The Confessor PHP API must be configured to allow CORS requests for this client to work.
  */
 
-// Replace the link with your own confessor
-const confessor = "https://kbcsconf.pacificaservice.org";
-
-// Replace the timezone with your radio station's IANA timezone.
-const timeZone = "America/Los_Angeles";
+// Configuration is loaded from config.js which must be included before this file
 
 // API call needed to get the current show.
-const currentShowCommand = "/_nu_do_api.php?req=getcurrent&json=1";
+const currentShowCommand = `${config.confessor}/_nu_do_api.php?req=getcurrent&json=1`;
+
+// Fetch configuration for CORS requests
+const fetchConfig = {
+  mode: 'cors',
+  credentials: 'omit',
+  headers: {
+    'Accept': 'application/json'
+  }
+};
 
 let nextShowTime = null;
 
@@ -37,6 +42,12 @@ let nextShowTime = null;
  * @fires {Function} nowPlaying
  */
 document.addEventListener("DOMContentLoaded", async function () {
+  // Initialize audio player with station info
+  document.getElementById("title").textContent = config.station + " Web Player";
+  document.getElementById("station-name").textContent = config.station;
+  document.getElementById("audio-player").src = config.stream;
+
+  // Initialize show information
   nextShowTime = await nowPlaying();
   console.log("Next show time:", nextShowTime);
 });
@@ -145,7 +156,11 @@ function decodeHtmlEntities(text) {
  */
 async function nowPlaying() {
   try {
-    const response = await fetch(confessor + currentShowCommand);
+    const response = await fetch(currentShowCommand, fetchConfig);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     const data = await response.json();
     console.log("API response:", data);
 
@@ -184,7 +199,7 @@ async function nowPlaying() {
       if (show.sh_ends) {
         document.getElementById("sh_ends").innerText =
           decodeHtmlEntities(show.sh_ends) || "";
-        return parseDate(show.sh_ends, timeZone);
+        return parseDate(show.sh_ends, config.timeZone);
       }
       return null;
     } else {
@@ -192,7 +207,15 @@ async function nowPlaying() {
       return null;
     }
   } catch (error) {
-    console.error("Error processing show data:", error);
+    if (error instanceof TypeError && error.message.includes('CORS')) {
+      console.error("CORS Error: The Confessor API must allow requests from this domain.", error);
+      console.log("To fix this, ensure your Confessor API has the following headers:");
+      console.log("Access-Control-Allow-Origin: *");
+      console.log("Access-Control-Allow-Methods: GET, OPTIONS");
+      console.log("Access-Control-Allow-Headers: Content-Type");
+    } else {
+      console.error("Error processing show data:", error);
+    }
     return null;
   }
 }
