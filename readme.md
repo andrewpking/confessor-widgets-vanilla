@@ -2,6 +2,8 @@
 
 This web-player is designed to work with Pacifica Streaming Services Confessor API written by Otis. All code in src/public is written by [Drew King](https://www.github.com/andrewpking)
 
+You can try an [example web-player widget](https://andrewpking.github.io/confessor-widgets-vanilla/) made for the KBCS website, the audio playback does not work at the moment due to Otis's IceCast instance for KBCS not supporting SSL. GitHub Pages requires SSL for all resources to run in its domain.
+
 ## How to add player widget
 
 This player can be embedded into an existing webpage or linked to as a pop-out player (recommended). Since most radio websites are not built as Single Page Apps (SPA's), I recommend using this as a pop-out player.
@@ -28,8 +30,9 @@ Now Playing
 
 The player requires JavaScript and an HTML-5 compliant browser to run, no Internet Explorer support is planned.
 
-This player app assumes you are using Pacifica Streaming Services - Confessor software for your radio station's metadata. It also assumes that you have an IceCast server that is accessible publicly.
+This player app assumes you are using Pacifica Streaming Services - Confessor software for your radio station's metadata. It also assumes that you have an IceCast server that is accessible publicly and secured with SSL.
 
 - Otis will need to update your confessor's PHP to allow this code to run, since his API does not include CORS headers by default.
+- Otis will need to upgrade your IceCast server to support SSL/https. This will likely fail your hosts domain requirements if that is not enabled.
 
 This code is provided with the MIT license.
