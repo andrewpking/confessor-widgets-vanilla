@@ -27,7 +27,7 @@ The steps described are for using github pages to host this player from a fork o
 
 ### Pop-Out player for your confessor
 
-1. Fork this repository to your github using the fork button.
+- Fork this repository to your github account using the fork button.
 
 #### Change variables for your radio station
 
@@ -42,16 +42,13 @@ Once you have your workspace setup, the following changes need to be made to the
 
 ### Hosting
 
-You can use the deployment pipeline built into this repo to host the player on your github pages website or self-host by uploading the code to your own server.
+You can use the deployment pipeline built into this repository to host the player on your github pages website or self-host by uploading the code to your own server.
 
 #### GitHub Pages (Recommended)
 
-Save your changes to your fork using the following commands:
+When you save the config file, it will automatically generate a site on github pages with your player at `your-github-username.github.io/confessor-widgets-vanilla`, you can use this page for your player.
 
-`git commit -m "Updated my config variables"`
-`git push`
-
-This will automatically generate a site on github pages with your player at `your-github-username.github.io/confessor-widgets-vanilla`, you can use this page for your player.
+**Note**: Be sure to replace your-github-username in the above link with your actual github username.
 
 #### Self hosting
 
@@ -79,7 +76,7 @@ The player requires JavaScript and an HTML-5 compliant browser to run, no Intern
 
 This player app assumes you are using Pacifica Streaming Services - Confessor software for your radio station's metadata. It also assumes that you have an IceCast server that is accessible publicly and secured with SSL.
 
-To use this contact Ots for help with:
+To use this contact Otis for help with:
 
 - Updating your confessor's PHP to allow this code to run, since his API does not include CORS headers by default.
 - Upgrading your IceCast server to support SSL/https. This player will likely fail your hosts domain requirements if that is not enabled.
