@@ -10,8 +10,14 @@
  * @note The Confessor PHP API must be configured to allow CORS requests for this client to work.
  */
 
+// Station name
+const station = "KBCS";
+
 // Replace the link with your own confessor
 const confessor = "https://kbcsconf.pacificaservice.org";
+
+// Replace this link with your IceCast stream over https
+const stream = "https://streamkbcs.pacificaservice.org/kbcs";
 
 // Replace the timezone with your radio station's IANA timezone.
 const timeZone = "America/Los_Angeles";
@@ -37,6 +43,11 @@ let nextShowTime = null;
  * @fires {Function} nowPlaying
  */
 document.addEventListener("DOMContentLoaded", async function () {
+  // Initialize audio player with station info
+  document.getElementById('station-name').textContent = station;
+  document.getElementById('audio-player').src = stream;
+  
+  // Initialize show information
   nextShowTime = await nowPlaying();
   console.log("Next show time:", nextShowTime);
 });
