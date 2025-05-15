@@ -1,12 +1,12 @@
 /**
  * @fileoverview Client for the Pacifica Streaming Services Confessor API that displays
  * current show information and automatically updates when shows change.
- * 
+ *
  * @requires CORS-enabled Confessor API endpoint
  * @author Drew King {@link https://www.github.com/andrewpking}
  * @author Otis (Confessor API)
  * @license MIT
- * 
+ *
  * @note The Confessor PHP API must be configured to allow CORS requests for this client to work.
  */
 
@@ -23,15 +23,15 @@ let nextShowTime = null;
 
 /**
  * Initializes the show information when the DOM is fully loaded.
- * 
+ *
  * This event listener executes once when the page loads and:
  * 1. Makes the initial API call to get current show data
  * 2. Updates the DOM with show information
  * 3. Sets up the nextShowTime for the automatic refresh cycle
- * 
+ *
  * Global state affected:
  * - nextShowTime: Set to the next show's start time
- * 
+ *
  * @listens {Event} DOMContentLoaded
  * @async
  * @fires {Function} nowPlaying
@@ -80,10 +80,10 @@ function parseDate(time, timezone) {
 
   // Handle special keywords
   const normalizedTime = time.toLowerCase();
-  if (normalizedTime === 'noon') {
+  if (normalizedTime === "noon") {
     hours = 12;
     minutes = 0;
-  } else if (normalizedTime === 'midnight') {
+  } else if (normalizedTime === "midnight") {
     hours = 0;
     minutes = 0;
   } else {
@@ -164,10 +164,10 @@ async function nowPlaying() {
         document.getElementById("sh_cat").innerText =
           decodeHtmlEntities(show.cat) || "";
       }
-      if (show.sh_photo) {
+      if (show.sh_med_photo) {
         document
           .getElementById("sh_photo")
-          .setAttribute("src", show.sh_photo || "default.jpg");
+          .setAttribute("src", show.sh_med_photo || "default.jpg");
       }
       if (show.sh_djname) {
         document.getElementById("sh_djname").innerText =
