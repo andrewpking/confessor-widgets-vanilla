@@ -48,9 +48,10 @@
             <!-- Audio player at the bottom -->
             <div class="audio-container">
                 <div class="player-info">
-                    <span class="now-playing">Now streaming KBCS</span>
+                    <span class="now-playing">Now streaming <span id="station-name">KBCS</span></span>
                 </div>
                 <audio
+                    id="audio-player"
                     src="https://streamkbcs.pacificaservice.org/kbcs"
                     controls
                     autoplay
