@@ -10,17 +10,8 @@
  * @note The Confessor PHP API must be configured to allow CORS requests for this client to work.
  */
 
-// Station name
-const station = "KBCS";
-
-// Replace the link with your own confessor
-const confessor = "https://kbcsconf.pacificaservice.org";
-
-// Replace this link with your IceCast stream over https
-const stream = "https://streamkbcs.pacificaservice.org/kbcs";
-
-// Replace the timezone with your radio station's IANA timezone.
-const timeZone = "America/Los_Angeles";
+// Import configuration variables
+import { station, confessor, stream, timeZone } from './config.js';
 
 // API call needed to get the current show.
 const currentShowCommand = "/_nu_do_api.php?req=getcurrent&json=1";
