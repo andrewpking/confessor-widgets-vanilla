@@ -2,7 +2,9 @@
 
 This web-player is designed to work with Pacifica Streaming Services Confessor API written by Otis. All code in src/public is written by [Drew King](https://www.github.com/andrewpking)
 
-You can try an [example web-player widget](https://andrewpking.github.io/confessor-widgets-vanilla/) made for the KBCS website, the audio playback does not work at the moment due to Otis's IceCast instance for KBCS not supporting SSL. GitHub Pages requires SSL for all resources to run in its domain.
+You can try an [example web-player widget](https://andrewpking.github.io/confessor-widgets-vanilla/) made for the KBCS website. Please note that GitHub Pages requires SSL for all resources to run in its domain, meaning your IceCast URL should start with `https://`.
+
+**Note**: If you do not have an IceCast stream URL with `https://`, you will need to contact Otis for one.
 
 ## How to add player widget
 
@@ -32,8 +34,6 @@ You can use the deployment pipeline built into this repo to host the player on y
 #### GitHub Pages (Recommended)
 
 Save your changes and push them to your fork, this will automatically generate a site on github pages with your player at `your-github-username.github.io/confessor-widgets-vanilla`, you can use this page for your player.
-
-**Note**: This page will not load the audio unless you contact Otis to setup SSL on your IceCast server (see "Current Limitations" section)
 
 #### Self hosting
 
