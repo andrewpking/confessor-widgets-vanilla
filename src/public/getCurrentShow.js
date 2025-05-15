@@ -11,7 +11,7 @@
  */
 
 // Import configuration variables
-import { station, confessor, stream, timeZone } from './config.js';
+import { station, confessor, stream, timeZone } from "./config.js";
 
 // API call needed to get the current show.
 const currentShowCommand = "/_nu_do_api.php?req=getcurrent&json=1";
@@ -35,9 +35,10 @@ let nextShowTime = null;
  */
 document.addEventListener("DOMContentLoaded", async function () {
   // Initialize audio player with station info
-  document.getElementById('station-name').textContent = station;
-  document.getElementById('audio-player').src = stream;
-  
+  document.getElementById("title").textContent = station + " Web Player";
+  document.getElementById("station-name").textContent = station;
+  document.getElementById("audio-player").src = stream;
+
   // Initialize show information
   nextShowTime = await nowPlaying();
   console.log("Next show time:", nextShowTime);
