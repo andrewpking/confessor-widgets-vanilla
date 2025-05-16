@@ -205,13 +205,6 @@ audio::-webkit-media-controls-play-button:hover {
 }
 
 /* Responsive design */
-
-@media (max-width: 950px) {
-    .player-container {
-        overflow: scroll;
-    }
-}
-
 @media (max-width: 768px) {
     h1 {
         font-size: 1.8rem;
@@ -219,5 +212,19 @@ audio::-webkit-media-controls-play-button:hover {
 
     ul {
         font-size: 0.9rem;
+    }
+
+    body {
+        height: auto;
+        overflow: scroll;
+    }
+
+    /* Audio player styling - fixed at the bottom */
+    .audio-container {
+        position: sticky;
+    }
+
+    .content: {
+        height: auto;
     }
 }
