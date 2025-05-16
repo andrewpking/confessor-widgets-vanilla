@@ -89,7 +89,7 @@ h1 a:hover {
 }
 
 /* Show info list */
-ul {
+ol {
     list-style: none;
     margin-bottom: 20px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -100,14 +100,14 @@ ul {
     border-left: 4px solid #3498db;
 }
 
-ul ol {
+ol li {
     padding: 8px 0;
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-ul ol:last-child {
+ol li:last-child {
     border-bottom: none;
 }
 
