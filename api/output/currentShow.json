@@ -5,8 +5,11 @@
     "sh_altid": "rootrocksoul",
     "sh_memsysid": "",
     "sh_photo": "",
-    "sh_med_photo": "",
+    "sh_med_photo": "https://kbcsconf.pacificaservice.org/pix/KBCS.png",
+    "sh_it_photo": "",
     "sh_djname": "Iaan Hughes",
+    "sh_desc": "",
+    "sh_shortdesc": "",
     "sh_info": 132,
     "sh_shour": 13,
     "sh_stime": "1:00 PM",
@@ -20,12 +23,9 @@
     "sh_facebook": "",
     "sh_twitter": "",
     "sh_tumblr": "",
-    "sh_cat": {
-      "ca_name": "Music Mix",
-      "ca_color": "FFFFFF",
-      "ca_bgcolor": "BF866D",
-      "ca_lcolor": "CCFFDB"
-    },
+    "cat": "Music Mix",
+    "cat_color": "FFFFFF",
+    "cat_bgcolor": "BF866D",
     "type": "Music"
   },
   "next": {

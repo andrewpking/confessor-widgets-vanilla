@@ -5,10 +5,10 @@
 // Get show by key from list: https://kbcsconf.pacificaservice.org/_nu_do_api.php?req=key&key=iexclsabor&json=1
 // Get shows by alphabetical order: https://kbcsconf.pacificaservice.org/_nu_do_api.php?req=getalfa&json=1
 // Map show alt id's to show names: https://kbcsconf.pacificaservice.org/_nu_do_api.php?req=altids&json=1
-// Throws an Error: https://kbcsconf.pacificaservice.org/_nu_do_api.php?req=getary&json=1
+// Use this for player: https://kbcsconf.pacificaservice.org/_nu_do_api.php?req=nowary&json=1
 // Get all shows, including off air: https://kbcsconf.pacificaservice.org/_nu_do_api.php?req=memsys&json=1
 // Get gone shows: https://kbcsconf.pacificaservice.org/_nu_do_api.php?req=getgone&json=1
-// Get current show: https://kbcsconf.pacificaservice.org/_nu_do_api.php?req=getcurrent&dte=''&json=1
+// Get current show: https://kbcsconf.pacificaservice.org/_nu_do_api.php?req=getcurrent&json=1
 <?php
 $capi_host = "https://kbcsconf.pacificaservice.org";
 $archive_host = "https://kbcsarch.pacificaservice.org";
